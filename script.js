@@ -13,6 +13,25 @@ const ex12 = document.querySelector(".ex12")
 
 const generateButton = document.querySelector(".generateButton")
 
+const start = document.querySelector(".startTimerButton")
+const time = document.querySelector(".countdown")
+
+function startTimer(){
+  let count = 30;
+const timer = setInterval(function() {
+  count--;
+  time.textContent = "00:"+(count)
+  console.log(count);
+  if (count === 0) {
+    clearInterval(timer);
+  }
+}, 1000);
+}
+
+start.addEventListener("click", function(){
+  startTimer()
+})
+
 function generate(){
     let picker1;
     let picker2;
@@ -43,102 +62,102 @@ function generate(){
     }
     getRandomNumber(3)
     if(picker1 == 0){
-        ex1.textContent = "A"
+        ex1.textContent = "Push ups"
     } else if (picker1 == 1){
-        ex1.textContent = "B"
+        ex1.textContent = "Diamond push ups"
     } else {
-        ex1.textContent = "C"
+        ex1.textContent = "Decline push ups"
     }
 
     if(picker2 == 0){
-        ex2.textContent = "A"
+        ex2.textContent = "Incline push ups"
     } else if (picker2 == 1){
-        ex2.textContent = "B"
+        ex2.textContent = "Push ups"
     } else {
-        ex2.textContent = "C"
+        ex2.textContent = "One-leg push ups"
     }
 
     if(picker3 == 0){
-        ex3.textContent = "A"
+        ex3.textContent = "Bird-dog "
     } else if (picker2 == 1){
-        ex3.textContent = "B"
+        ex3.textContent = "Superman"
     } else {
-        ex3.textContent = "C"
+        ex3.textContent = "Cat-cow"
     }
 
     if(picker4 == 0){
-        ex4.textContent = "A"
+        ex4.textContent = "Bird-dog"
     } else if (picker2 == 1){
-        ex4.textContent = "B"
+        ex4.textContent = "Superman"
     } else {
-        ex4.textContent = "C"
+        ex4.textContent = "Cat-cow"
     }
 
     if(picker5 == 0){
-        ex5.textContent = "A"
+        ex5.textContent = "Triceps dips"
     } else if (picker2 == 1){
-        ex5.textContent = "B"
+        ex5.textContent = "Plank taps"
     } else {
-        ex5.textContent = "C"
+        ex5.textContent = "Superman with arm extension"
     }
 
     if(picker6 == 0){
-        ex6.textContent = "A"
+        ex6.textContent = "Inchworm"
     } else if (picker2 == 1){
-        ex6.textContent = "B"
+        ex6.textContent = "Triceps dips"
     } else {
-        ex6.textContent = "C"
+        ex6.textContent = "Side plank with arm extension"
     }
 
     if(picker7 == 0){
-        ex7.textContent = "A"
+        ex7.textContent = "Glute bridge"
     } else if (picker2 == 1){
-        ex7.textContent = "B"
+        ex7.textContent = "Single leg glute bridge "
     } else {
-        ex7.textContent = "C"
+        ex7.textContent = "Hip thrust"
     }
 
     if(picker8 == 0){
-        ex8.textContent = "A"
+        ex8.textContent = "Glute bridge"
     } else if (picker2 == 1){
-        ex8.textContent = "B"
+        ex8.textContent = "Reverse leg lift"
     } else {
-        ex8.textContent = "C"
+        ex8.textContent = "Side lunge"
     }
 
     if(picker9 == 0){
-        ex9.textContent = "A"
+        ex9.textContent = "Reverse crunch"
     } else if (picker2 == 1){
-        ex9.textContent = "B"
+        ex9.textContent = "Crunch"
     } else {
-        ex9.textContent = "C"
+        ex9.textContent = "Russian twist"
     }
 
     if(picker10 == 0){
-        ex10.textContent = "A"
+        ex10.textContent = "Knee to elbows crunch"
     } else if (picker2 == 1){
-        ex10.textContent = "B"
+        ex10.textContent = "Leg raises"
     } else {
-        ex10.textContent = "C"
+        ex10.textContent = "Flutter kicks"
     }
 
     if(picker11 == 0){
-        ex11.textContent = "A"
+        ex11.textContent = "Squat"
     } else if (picker2 == 1){
-        ex11.textContent = "B"
+        ex11.textContent = "Jump squat"
     } else {
-        ex11.textContent = "C"
+        ex11.textContent = "Side squat"
     }
 
     if(picker12 == 0){
-        ex12.textContent = "A"
+        ex12.textContent = "Squat to curtsy lunge"
     } else if (picker2 == 1){
-        ex12.textContent = "B"
+        ex12.textContent = "Calf raises"
     } else {
-        ex12.textContent = "C"
+        ex12.textContent = "Jump/Normal lunge"
     }
 }
-
+generate()
 generateButton.addEventListener("click", function(){
     generate()
 })
