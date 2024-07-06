@@ -55,4 +55,9 @@ body {
     padding: 10px;
     text-align: center;
     font-size: 30px;
+    cursor: pointer;
+}
+
+.generateButton:active {
+    background-color: #F9DC5C;
 }
