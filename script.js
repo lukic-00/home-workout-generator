@@ -16,16 +16,24 @@ const generateButton = document.querySelector(".generateButton")
 const start = document.querySelector(".startTimerButton")
 const time = document.querySelector(".countdown")
 
-function startTimer(){
+const alarmSound = new Audio("images/bell-sound.mp3")
+
+let timer;
+
+function startTimer() {
   let count = 30;
-const timer = setInterval(function() {
-  count--;
-  time.textContent = "00:"+(count)
-  console.log(count);
-  if (count === 0) {
+  if (timer) {
     clearInterval(timer);
   }
-}, 1000);
+  timer = setInterval(function() {
+    count--;
+    time.textContent = "00:" + (count < 10 ? '0' : '') + count;
+    console.log(count);
+    if (count === 0) {
+      clearInterval(timer);
+      alarmSound.play();
+    }
+  }, 1000);
 }
 
 start.addEventListener("click", function(){
